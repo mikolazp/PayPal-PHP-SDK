@@ -151,7 +151,7 @@ class PayPalHttpConnection
         //Using alternative solution to CURLINFO_HEADER_SIZE as it throws invalid number when called using PROXY.
         $responseHeaderSize = strlen($result) - curl_getinfo($ch, CURLINFO_SIZE_DOWNLOAD);
         $responseHeaders = substr($result, 0, $responseHeaderSize);
-        $result = substr($result, $responseHeaderSize);
+        //$result = substr($result, $responseHeaderSize);
 
         $this->logger->debug("Request Headers \t: " . str_replace("\r\n", ", ", $requestHeaders));
         $this->logger->debug(($data && $data != '' ? "Request Data\t\t: " . $data : "No Request Payload") . "\n" . str_repeat('-', 128) . "\n");
